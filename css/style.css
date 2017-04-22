@@ -327,41 +327,36 @@ ul#menu li:hover a
   background: #FFF; 
   color: #47433F;}
 
+ 
+/* styling for the slideshow on the homepage */
+ 
+ .slideshowmap {
+  width: 600px;
+  height: 600px;
+  overflow: hidden;
+  position: relative;
+  margin-top: 20px;}
+  
 
-  
-.map {
-  width: 700px;
-  height: 600px;
-  overflow: hidden;
-  position: relative;
-  margin-top: 20px;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px;
-  box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px;}
-  
-/* home */
-ul.map{
+ul.slideshowmap {
   list-style: none;
-  width: 900px;
-  height: 600px;
+  width: 600px;
+  height: 900px;
   overflow: hidden;
   position: relative;
-  margin: 0;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px;
-  box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px;}
+margin: 0;}
   
-ul.map li {
-  position: absolute;
+ul.slideshowmap li {
+  position: relative;
   margin: 0;
   padding: 0;
   left: 0;
   right: 0;}
- 
-ul.map li.show {
-  z-index: 500;}
- 
-ul img {
+  
+  ul img {
   border: none;}
+ 
+ul.slideshowmap li.showmap {
+  z-index: 500;}
  
  
