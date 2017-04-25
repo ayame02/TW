@@ -74,9 +74,7 @@ ol li
 #main
 { background: transparent;
  position: relative;
- float: left;
- max-width: auto;
- height: auto;}
+}
   
 #header
 { width: 960px;
