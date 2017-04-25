@@ -343,5 +343,11 @@ ul.slideshowmap li.showmap {
     height: 2rem;
     
   }
+  
+  .favorites{
+	  display: relative;
+	  width:600px;
+	  height:400px;
+  }
  
  
