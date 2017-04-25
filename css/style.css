@@ -378,3 +378,8 @@ text-align: center;
 .ddisplay{
 display: inline-block;
 }
+
+.fieldset{
+	width: 90px;
+	text-align: center;
+}
