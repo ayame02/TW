@@ -73,7 +73,8 @@ ol li
 
 #main
 { background: transparent;
- float: relative;
+ position: relative;
+ float: left;
  max-width: auto;
  height: auto;}
   
