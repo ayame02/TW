@@ -94,15 +94,6 @@ ol li
   text-align: center; 
   margin: 0 auto;
   background: #0043A8;
-  background: -moz-linear-gradient(#43A9FF, #0043A8);
-  background: -o-linear-gradient(#43A9FF, #0043A8);
-  background: -webkit-linear-gradient(#43A9FF, #0043A8);
-  border-radius: 15px 15px 0px 0px;
-  -moz-border-radius: 15px 15px 0px 0px;
-  -webkit-border: 15px 15px 0px 0px;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 5px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 5px;
-  box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 5px;
   } 
   
 #welcome
@@ -173,10 +164,7 @@ ul#menu li:hover a
   padding-left: 20px;
   overflow: hidden;
   margin: 0 auto;
-  background: #323232;
-  border-radius: 0px 0px 15px 15px;
-  -moz-border-radius: 0px 0px 15px 15px;
-  -webkit-border: 0px 0px 15px 15px;} 
+  background: #323232;} 
 
 .sidebar_container
 { float: left;
@@ -204,16 +192,7 @@ ul#menu li:hover a
   height: 30px;
   text-shadow: 0px -1px 0px #000;
   color: #fff;
-  background: #0043A8;
-  background: -moz-linear-gradient(#43A9FF, #0043A8);
-  background: -o-linear-gradient(#43A9FF, #0043A8);
-  background: -webkit-linear-gradient(#43A9FF, #0043A8);
-  border-radius: 15px 15px 15px 15px;
-  -moz-border-radius: 15px 15px 15px 15px;
-  -webkit-border: 15px 15px 15px 15px;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 5px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 5px;
-  box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 5px;}  
+  background: #0043A8;}  
 
 #content
 { width: 680px;
@@ -268,26 +247,7 @@ ul#menu li:hover a
   margin: 20px 0 10px 10px;
   float: left;}
  
-  
- .readmore
-{ font: bold 110% Arial, Helvetica, sans-serif;
-  height: 15px;
-  margin-left: 95px;
-  width: 90px;
-  padding: 5px 5px 10px 7px;
-  background: #fff;
-  background: -moz-linear-gradient(#fff, #ccc);
-  background: -o-linear-gradient(#fff, #ccc);
-  background: -webkit-linear-gradient(#fff, #ccc);
-  border-radius: 15px 15px 15px 15px;
-  -moz-border-radius: 15px 15px 15px 15px;
-  -webkit-border: 15px 15px 15px 15px;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 5px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 5px;
-  box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 5px;}
-  
- .readmore a
-{ color: #1D1D1D;}
+ 
  
  .button_small
 { font: normal 110% Arial, Helvetica, sans-serif;
@@ -295,15 +255,8 @@ ul#menu li:hover a
   width: 90px;
   padding: 5px 5px 10px 7px;
   background: #0043A8;
-  background: -moz-linear-gradient(#43A9FF, #0043A8);
-  background: -o-linear-gradient(#43A9FF, #0043A8);
-  background: -webkit-linear-gradient(#43A9FF, #0043A8);
   border-radius: 15px 15px 15px 15px;
-  -moz-border-radius: 15px 15px 15px 15px;
-  -webkit-border: 15px 15px 15px 15px;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 5px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 5px;
-  box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 5px;}
+}
   
 .button_small a
 { color: #FFF;
