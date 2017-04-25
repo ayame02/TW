@@ -52,8 +52,6 @@ a
   outline: none;
   text-decoration: underline;}
 
-a:hover
-{ text-decoration: none;}
 
 ul
 { 
@@ -74,7 +72,10 @@ ol li
   margin-right: auto;}
 
 #main
-{ background: transparent;}
+{ background: transparent;
+ float: relative;
+ max-width: auto;
+ height: auto;}
   
 #header
 { width: 960px;
