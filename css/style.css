@@ -350,4 +350,29 @@ ul.slideshowmap li.showmap {
 	  height:400px;
   }
  
- 
+  .profile_image{
+width: 15rem;
+display: block;
+margin:auto;
+}
+.friend_location{
+width: 600px;
+height: 400px;
+display: block;
+margin: auto;
+}
+.info{
+font-weight: bolder;
+text-align: center;
+margin-top: 1rem;
+}
+.title_1{
+text-align: center;
+margin-top: 5rem;
+}
+.details{
+text-align: center;
+}
+.ddisplay{
+display: inline-block;
+}
