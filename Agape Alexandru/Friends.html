@@ -7,6 +7,11 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+  <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
+  <script type="text/javascript" src="js/controllers.js"></script>
+  <script type="text/javascript" src="js/friends.js"></script>
+
 </head>
 
 <body>
@@ -33,68 +38,17 @@
     </div><!--close menubar-->
   
     <div id="site_content"> 
-    <div class="container">       
-      <div class="item">
-                      <img src="https://lh3.googleusercontent.com/weELaM1Kcqka-TPWjxle2gonkGzXeDCN-GFQweCCyzeTJnu7uDG0RsXk-jSCs-EZVykqv_6wU4TXbeWzWonnpBJ6cAeCgbyElZpustkrc0C6IqquGrWNxgMneBkZNLaGi9U3GmmtQ3HDLcQNCPXKIDiys-XWT0m6SOGnpcXnhTHoOtKxOL3s9_XN_mRvvOhy_vwF7QafcosOQcEvVnhU8Q8XDmUjwhd0EWQ26ApL5wRF-h4R4-EgJNIUXwpNqAaDAO67PsQou1mt6J0Qv-NLhqXQBxcFUwNty4aYxhWYk6mLV1E2F0ZZnNcD39-bOFx_EMuvnYoZvG8uT_NJktgrNr56fKjsC944de6yxRX2a7tP-ocuBy8myvDg5H-qn6qbG5FzAIQUlrKhwIx4JdUqjmEiEANoiyHAv5Mjhs7Gu7lXYCc1BUedrAVpjHBBfOHLBYgYVl-UV5nHUQPQq0kaVkXnYAlf6-rrzr8CleibmqlfBZ-e2qhFPbLfn8R4lojS31dUoPogk6wE_HYDQXnb7j8iWG6vgIk28lgpZgTuEeVNFvyK2fPLevfi9A_UFmbQaeoC8DzyZEtreALZ0eKAgxG4TgbvzkWqQSwPa_V6ZCi-ERZZZOkN=s919-no" alt=""  class="friend_image">
-                      <div class="friend_name">
-                           <h2 style="display: inline-block;"><a href="agape.html">Agape  Alexandru       </a></h2>
-                           <button class="friend_button">
-                            Prieteni
-                          </button>
-                      </div>
-                      <!--close sidebar_item--> 
-        </div><!--close sidebar-->        
-     
-        <div class="item">
-                      <img src="https://lh3.googleusercontent.com/weELaM1Kcqka-TPWjxle2gonkGzXeDCN-GFQweCCyzeTJnu7uDG0RsXk-jSCs-EZVykqv_6wU4TXbeWzWonnpBJ6cAeCgbyElZpustkrc0C6IqquGrWNxgMneBkZNLaGi9U3GmmtQ3HDLcQNCPXKIDiys-XWT0m6SOGnpcXnhTHoOtKxOL3s9_XN_mRvvOhy_vwF7QafcosOQcEvVnhU8Q8XDmUjwhd0EWQ26ApL5wRF-h4R4-EgJNIUXwpNqAaDAO67PsQou1mt6J0Qv-NLhqXQBxcFUwNty4aYxhWYk6mLV1E2F0ZZnNcD39-bOFx_EMuvnYoZvG8uT_NJktgrNr56fKjsC944de6yxRX2a7tP-ocuBy8myvDg5H-qn6qbG5FzAIQUlrKhwIx4JdUqjmEiEANoiyHAv5Mjhs7Gu7lXYCc1BUedrAVpjHBBfOHLBYgYVl-UV5nHUQPQq0kaVkXnYAlf6-rrzr8CleibmqlfBZ-e2qhFPbLfn8R4lojS31dUoPogk6wE_HYDQXnb7j8iWG6vgIk28lgpZgTuEeVNFvyK2fPLevfi9A_UFmbQaeoC8DzyZEtreALZ0eKAgxG4TgbvzkWqQSwPa_V6ZCi-ERZZZOkN=s919-no" alt=""  class="friend_image">
-                      <div class="friend_name">
-                           <h2 style="display: inline-block;"><a href="gavriliuc.html">Samuel Gavriliuc</a></h2>
-                           <button class="friend_button">
-                            Prieteni
-                          </button>
-                      </div>                 
-        </div><!--close sidebar--> 
-                
-      <div class="item">
-                        <img src="https://lh3.googleusercontent.com/weELaM1Kcqka-TPWjxle2gonkGzXeDCN-GFQweCCyzeTJnu7uDG0RsXk-jSCs-EZVykqv_6wU4TXbeWzWonnpBJ6cAeCgbyElZpustkrc0C6IqquGrWNxgMneBkZNLaGi9U3GmmtQ3HDLcQNCPXKIDiys-XWT0m6SOGnpcXnhTHoOtKxOL3s9_XN_mRvvOhy_vwF7QafcosOQcEvVnhU8Q8XDmUjwhd0EWQ26ApL5wRF-h4R4-EgJNIUXwpNqAaDAO67PsQou1mt6J0Qv-NLhqXQBxcFUwNty4aYxhWYk6mLV1E2F0ZZnNcD39-bOFx_EMuvnYoZvG8uT_NJktgrNr56fKjsC944de6yxRX2a7tP-ocuBy8myvDg5H-qn6qbG5FzAIQUlrKhwIx4JdUqjmEiEANoiyHAv5Mjhs7Gu7lXYCc1BUedrAVpjHBBfOHLBYgYVl-UV5nHUQPQq0kaVkXnYAlf6-rrzr8CleibmqlfBZ-e2qhFPbLfn8R4lojS31dUoPogk6wE_HYDQXnb7j8iWG6vgIk28lgpZgTuEeVNFvyK2fPLevfi9A_UFmbQaeoC8DzyZEtreALZ0eKAgxG4TgbvzkWqQSwPa_V6ZCi-ERZZZOkN=s919-no" alt=""  class="friend_image">
-                      <div class="friend_name">
-                           <h2 style="display: inline-block;"><a href="belcescu.html">Belcescu Cristina</a></h2>
-                           <button class="friend_button">
-                            Prieteni
-                          </button>
-                      </div>
-        </div><!--close sidebar-->
-     <div class="item">
-                        <img src="https://lh3.googleusercontent.com/weELaM1Kcqka-TPWjxle2gonkGzXeDCN-GFQweCCyzeTJnu7uDG0RsXk-jSCs-EZVykqv_6wU4TXbeWzWonnpBJ6cAeCgbyElZpustkrc0C6IqquGrWNxgMneBkZNLaGi9U3GmmtQ3HDLcQNCPXKIDiys-XWT0m6SOGnpcXnhTHoOtKxOL3s9_XN_mRvvOhy_vwF7QafcosOQcEvVnhU8Q8XDmUjwhd0EWQ26ApL5wRF-h4R4-EgJNIUXwpNqAaDAO67PsQou1mt6J0Qv-NLhqXQBxcFUwNty4aYxhWYk6mLV1E2F0ZZnNcD39-bOFx_EMuvnYoZvG8uT_NJktgrNr56fKjsC944de6yxRX2a7tP-ocuBy8myvDg5H-qn6qbG5FzAIQUlrKhwIx4JdUqjmEiEANoiyHAv5Mjhs7Gu7lXYCc1BUedrAVpjHBBfOHLBYgYVl-UV5nHUQPQq0kaVkXnYAlf6-rrzr8CleibmqlfBZ-e2qhFPbLfn8R4lojS31dUoPogk6wE_HYDQXnb7j8iWG6vgIk28lgpZgTuEeVNFvyK2fPLevfi9A_UFmbQaeoC8DzyZEtreALZ0eKAgxG4TgbvzkWqQSwPa_V6ZCi-ERZZZOkN=s919-no" alt=""  class="friend_image">
-                      <div class="friend_name">
-                           <h2 style="display: inline-block;"><a href="chirila.html">Chirila Loredana</a></h2>
-                           <button class="friend_button">
-                            Prieteni
-                          </button>
-                      </div>
-        </div><!--close sidebar-->
-     <div class="item">
-
-                        <img src="https://lh3.googleusercontent.com/weELaM1Kcqka-TPWjxle2gonkGzXeDCN-GFQweCCyzeTJnu7uDG0RsXk-jSCs-EZVykqv_6wU4TXbeWzWonnpBJ6cAeCgbyElZpustkrc0C6IqquGrWNxgMneBkZNLaGi9U3GmmtQ3HDLcQNCPXKIDiys-XWT0m6SOGnpcXnhTHoOtKxOL3s9_XN_mRvvOhy_vwF7QafcosOQcEvVnhU8Q8XDmUjwhd0EWQ26ApL5wRF-h4R4-EgJNIUXwpNqAaDAO67PsQou1mt6J0Qv-NLhqXQBxcFUwNty4aYxhWYk6mLV1E2F0ZZnNcD39-bOFx_EMuvnYoZvG8uT_NJktgrNr56fKjsC944de6yxRX2a7tP-ocuBy8myvDg5H-qn6qbG5FzAIQUlrKhwIx4JdUqjmEiEANoiyHAv5Mjhs7Gu7lXYCc1BUedrAVpjHBBfOHLBYgYVl-UV5nHUQPQq0kaVkXnYAlf6-rrzr8CleibmqlfBZ-e2qhFPbLfn8R4lojS31dUoPogk6wE_HYDQXnb7j8iWG6vgIk28lgpZgTuEeVNFvyK2fPLevfi9A_UFmbQaeoC8DzyZEtreALZ0eKAgxG4TgbvzkWqQSwPa_V6ZCi-ERZZZOkN=s919-no" alt=""  class="friend_image">
-                      <div class="friend_name">
-                           <h2 style="display: inline-block;"><a href="leleu.html">Leleu Alexandru</a></h2>
-                           <button class="friend_button">
-                            Prieteni
-                          </button>
-                      </div>
-        </div><!--close sidebar-->
-     <div class="item"> 
-                        <img src="https://lh3.googleusercontent.com/weELaM1Kcqka-TPWjxle2gonkGzXeDCN-GFQweCCyzeTJnu7uDG0RsXk-jSCs-EZVykqv_6wU4TXbeWzWonnpBJ6cAeCgbyElZpustkrc0C6IqquGrWNxgMneBkZNLaGi9U3GmmtQ3HDLcQNCPXKIDiys-XWT0m6SOGnpcXnhTHoOtKxOL3s9_XN_mRvvOhy_vwF7QafcosOQcEvVnhU8Q8XDmUjwhd0EWQ26ApL5wRF-h4R4-EgJNIUXwpNqAaDAO67PsQou1mt6J0Qv-NLhqXQBxcFUwNty4aYxhWYk6mLV1E2F0ZZnNcD39-bOFx_EMuvnYoZvG8uT_NJktgrNr56fKjsC944de6yxRX2a7tP-ocuBy8myvDg5H-qn6qbG5FzAIQUlrKhwIx4JdUqjmEiEANoiyHAv5Mjhs7Gu7lXYCc1BUedrAVpjHBBfOHLBYgYVl-UV5nHUQPQq0kaVkXnYAlf6-rrzr8CleibmqlfBZ-e2qhFPbLfn8R4lojS31dUoPogk6wE_HYDQXnb7j8iWG6vgIk28lgpZgTuEeVNFvyK2fPLevfi9A_UFmbQaeoC8DzyZEtreALZ0eKAgxG4TgbvzkWqQSwPa_V6ZCi-ERZZZOkN=s919-no"  alt="" class="friend_image">
-                      <div class="friend_name">
-                           <h2 style="display: inline-block;"><a href="carbune.html">Carbune George</a></h2>
-                           <button class="friend_button">
-                            Prieteni
-                          </button>
-                      </div>
-        </div><!--close sidebar-->
+    <div class="container" ng-app="friends" >  
+    <div ng-view>
 
 
-      </div><!--close sidebar_container-->       
+
+    </div>
+       
+
+
+
+      </div>       
      
       <div id="content">
                     <div class="content_item">
