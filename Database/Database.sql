@@ -13,7 +13,8 @@ CREATE TABLE usersInfo(
 	date_of_birth DATE,
 	location VARCHAR(256),
 	favorites_ID INT(4),
-	friends_ID INT(4)
+	friends_ID INT(4),
+	image VARCHAR(500)
 );
 
 /
@@ -25,7 +26,8 @@ CREATE TABLE friends(
 	age INT(4),
 	date_of_birth DATE,
 	location VARCHAR(500),
-	about_me BLOB
+	about_me BLOB,
+	image VARCHAR(500)
 );
 
 /
