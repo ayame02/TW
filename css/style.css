@@ -67,7 +67,7 @@ ol
 ol li
 { margin: 0 0 11px 0;}
 
-#main, #header, #banner, #menubar, #site_content, #footer, #content_bottom
+#main, #header, #banner, #menubar, #site_content, #footer, #content_bottom, #redirecting_content
 { margin-left: auto; 
   margin-right: auto;}
 
@@ -164,6 +164,23 @@ ul#menu li:hover a
   overflow: hidden;
   margin: 0 auto;
   background: #323232;} 
+
+#redirecting_content
+{
+  width: 940px;
+  padding-left: 20px;
+  overflow: hidden;
+  float: left;
+  margin: 70px 70px 70px 300px;
+  background: #FFFFFF;
+}
+
+#redirecting_content H2
+{ font: normal 300% Arial, Helvetica, sans-serif;
+  letter-spacing: -3px;
+  color: #000000;
+ }
+
 
 .sidebar_container
 { float: left;
