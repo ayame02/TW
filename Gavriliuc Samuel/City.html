@@ -52,11 +52,13 @@
                                        center: [27.583968133814892,47.1584549],
                                       zoom: 13
                                     });
-                                   map.addControl(new mapboxgl.GeolocateControl());
-                                   map.addControl(
+                                    map.addControl(
                                        new MapboxGeocoder({
                                        accessToken: mapboxgl.accessToken
                                       }));
+                                   map.addControl(new mapboxgl.GeolocateControl());
+                                   map.addControl(new mapboxgl.NavigationControl());
+
                               </script>
 
                       </div><!--close form_settings-->
