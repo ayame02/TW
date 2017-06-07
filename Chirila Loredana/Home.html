@@ -38,17 +38,13 @@
           <div class="sidebar_item">
             <h2>Account</h2>
 			<p> Please log in or sign up below to use our features.</p>
-			<form class="form_settings">
+			<form id ="login_form" class="form_settings" action = "login.php" method = "POST">
 				<p>Username:</p>
-				<input type="text" name="username"><br>
+				<input type="text" name="user"><br>
 				<p>Password:</p>
-				<input type="text" name="password">
-				
-				<div class="content_container">
-					<div class="button_small">
-						<a href="NaturalHome.html">Submit</a>
-					</div><!--close button_small-->
-				</div><!--close content_container-->
+				<input type="text" name="pass">
+				<p></p>
+				<input class = "button" type ="submit" value = "Sign In" onclick = "resetEntry()">
 			</form>
 			<p> Don't have an account?</p>
 			<p>Sign up <a href="SignUp.html">here!</a></p>
@@ -90,20 +86,27 @@
   
   <script>
 		var myIndex = 0;
-		carousel();
+		loopity();
 
-		function carousel() {
+		function loopity() {
 			var i;
 			var x = document.getElementsByClassName("showmap");
 			for (i = 0; i < x.length; i++) {
 				x[i].style.display = "none";  
 			}
 			myIndex++;
-			if (myIndex > x.length) {myIndex = 1}    
+			if (myIndex > x.length) {
+				myIndex = 1
+			}    
 			x[myIndex-1].style.display = "block";  
-			setTimeout(carousel, 4000); // Change image every 4 seconds
+			setTimeout(loopity, 4000); // Change image every 4 seconds
+		}
+		
+		function resetEntry() {
+			document.getElementByID("login_form").reset();
 		}
 	</script>
   
 </body>
 </html>
+
