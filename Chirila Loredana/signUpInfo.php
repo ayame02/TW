@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<meta http-equiv = "refresh" content = "10; url = Home.html">
+		<meta http-equiv = "refresh" content = "2; url = Home.html">
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
 	</head>
 	<body>
