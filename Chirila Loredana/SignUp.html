@@ -38,12 +38,9 @@
             <h2>Account</h2>
 			<p> Please log in or sign up below to use our features.</p>
 			
-			<form>
-				<fieldset>
+			<form action = "signUpInfo.php" method = "POST">	
 					<p>First Name:</p>
 					<input type="text" name="firstName"><br>
-					<p>Middle Name:</p>
-					<input type="text" name="middleName"><br>
 					<p>Last Name:</p>
 					<input type="text" name="lastName"><br>
 					<p>Date of birth: <p>
@@ -215,15 +212,11 @@
 						<option value="1900">1900</option>
 					</select>
 					<p>Username:</p>
-					<input type="text" name="username"><br>
+					<input type="text" name="usernm" action = "signUpInfo.php" method = "POST"><br>
 					<p>Password:</p>
-					<input type="text" name="password">
-					<div class="content_container">
-						<div class="button_small">
-							<a href="Home.html">Submit</a>
-						</div><!--close button_small-->
-					</div><!--close content_container-->
-				</fieldset>
+					<input type="password" name="pwd" action = "signUpInfo.php" method = "POST">
+					<p></p>
+					<input class = "button" type ="submit" value = "Sign Up">
 			</form>
 			
 			
