@@ -380,3 +380,10 @@ display: inline-block;
 	width: 90px;
 	text-align: center;
 }
+#map{
+  position:relative; 
+  margin:auto;
+  width:915px;
+  height: 480px;
+  }
+
