@@ -1,3 +1,6 @@
+Deprecated: serverul nu accepta conexiuni prin apache/php.
+De folosit localhost mysql.
+
 NetBeans:
 
 Driver: MySQL
