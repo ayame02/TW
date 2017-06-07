@@ -1,6 +1,13 @@
 Deprecated: serverul nu accepta conexiuni prin apache/php.
 De folosit localhost mysql.
 
+MySQL:
+
+host: localhost
+port: 3306
+database_name: tw
+user: root
+password: - (cazul meu) sau ""
 NetBeans:
 
 Driver: MySQL
