@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+   <link rel="icon" type="image/png" href="icon.png" />
+  <title>U R Web</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css"
+   integrity="sha512-07I2e+7D8p6he1SIM+1twR5TIrhUQn9+I6yjqD53JQjFiMf8EtC93ty0/5vJTZGF8aAocvHYNEDJajGdNx1IsQ=="
+   crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"
+   integrity="sha512-A7vV8IFfih/D732iSSKi20u/ooOfj/AGehOKq0f4vLT1Zr2Y+RX7C+w8A1gaSasGtRUZpF/NZgzSAu4/Gc41Lg=="
+   crossorigin=""></script>
+</head>
+
+<body>
+ <div id="main">
+    <div id="header">
+	    <div id="banner">
+			
+	        <div id="welcome">
+	               <h1>U R Web</h1>
+	        </div><!--close welcome-->
+	        
+            <div id="welcome_slogan">
+	                 <h1>Your everyday friendly map</h1>
+	        </div><!--close welcome_slogan-->
+	    </div><!--close banner-->
+    </div><!--close header-->
+
+	<div id="menubar">
+      <ul id="menu">
+       <li class ="current"><a href="NaturalHome.html">Home</a></li>
+		   <li ><a href="Friends.html">Friends</a></li>
+		   <li ><a href="Favorites.html">Favorites</a></li>
+		   <li ><a href="City.html">City/Location</a></li>
+
+      </ul>
+    </div><!--close menubar-->	
+    
+	<div id="site_content">		
+
+	  <div class="sidebar_container">       
+		<div class="sidebar">
+          <div class="sidebar_item">
+            <h1>Account Info</h1>
+			<h3> Welcome,  
+				<?php
+					session_start();
+					session_id('home');
+					
+					$user = "";
+					if (isset($_SESSION['user'])){
+						$user = $_SESSION['user'];
+						echo($user);
+					}
+					else{
+						echo("Invalid username.");
+						die();
+					}
+										
+				?>
+			</h3>
+			<p></p>
+			<div class="sidebar_item">
+				<h1>Full name: </h1>
+				<h3>
+					<?php
+						include ('databaseConn.php');
+						$db = new Database();
+						$IDQuery = "select id from users where username = '$user'";
+						$IDResult = $db->query($IDQuery);
+						$fetch = $IDResult->fetch_assoc();
+						$ID = $fetch['id'];
+						if ( $ID == NULL){
+							echo('');
+						}
+						else{
+							$NameQuery = "select name, first_name from usersinfo where user_id = $ID";
+							$NameResult = $db->query($NameQuery);
+							$fetch = $NameResult->fetch_assoc();
+							echo ($fetch['name'].' '.$fetch['first_name']);	
+						}
+					?>
+				</h3>
+				<p></p>
+				<h1>Date of birth: </h1>
+				<h3>
+					<?php
+						$IDQuery = "select id from users where username = '$user'";
+						$IDResult = $db->query($IDQuery);
+						$fetch = $IDResult->fetch_assoc();
+						$ID = $fetch['id'];
+						if ($ID == NULL){
+							echo('');
+						}
+						else{
+							$NameQuery = "select date_of_birth from usersinfo where user_id = $ID";
+							$NameResult = $db->query($NameQuery);
+							$fetch = $NameResult->fetch_assoc();
+							echo ($fetch['date_of_birth']);
+						}
+					?>
+				</h3>
+				<p></p>
+				<h1>Current location: </h1>
+			</div><!--close sidebar_item--> 
+          </div><!--close sidebar_item--> 
+        </div><!--close sidebar-->     		
+		
+       </div><!--close sidebar_container-->	
+		
+		<div id = "profile_map">
+		  <div class = "content_item">
+			<ul class = "content_image">
+				<script>
+					var loadMap = function (id) {
+						var Iasi = [47.158455, 27.601442];
+						var map = L.map(id);
+						var timeoutHandler;
+						var tile_url = 'https://api.mapbox.com/styles/v1/ayame02/cj3nm3rpr000a2rmnhceoliqr/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYXlhbWUwMiIsImEiOiJjajNubHM4djUwMDBiMzJsbXB4MTVmZW5sIn0.vsy8LT-lXz_kDWBk2TwxbQ';
+						var layer = L.tileLayer(tile_url, {
+							attribution: 'URW',
+							maxZoom: 22
+						}).addTo(map);
+						map.addLayer(layer);
+
+						
+						map.locate({setView: 'once', watch: true}) 
+						.on('locationfound', function(e){
+							var marker = L.marker([e.latitude, e.longitude]).bindPopup('You are here');
+							var circle = L.circle([e.latitude, e.longitude], e.accuracy/2, {
+								weight: 1,
+								color: 'blue',
+								fillColor: '#cacaca',
+								fillOpacity: 0
+							});
+							map.addLayer(marker);
+							map.addLayer(circle);
+						})
+					    .on('locationerror', function(e){
+							console.log(e);
+							alert("Location access denied.");
+						})
+						.on('zoomend dragend', mapMoveHandler);
+						function mapMoveHandler() {
+							window.clearTimeout(timeoutHandler);
+							timeoutHandler = window.setTimeout(function() {
+								map.fire('idle');
+							}, 180000);
+						}
+					};
+
+					loadMap('profile_map');
+				</script>
+			</ul>
+			
+		  </div>
+		</div>
+	 
+	
+    
+	
+	</div>
+  </div><!--close main-->
+  
+  
+  
+</body>
+</html>
