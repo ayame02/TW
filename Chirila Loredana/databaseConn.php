@@ -31,12 +31,13 @@
 			}
 
 			public function query ($q) {     
-				$this->result = mysqli_query ($q, $this->mysql_con);     
+				$this->result = mysqli_query ($this->mysql_con, $q);     
 				$this->Row = 0; 
-				$this->Errno = mysqli_errno(); 
-				$this->Error = mysqli_error();     
+				$this->Errno = mysqli_errno($this->mysql_con); 
+				$this->Error = mysqli_error($this->mysql_con);     
 				if (!$this->result) { 
-					$this->halt ("Bad SQL query: " . $q); 
+					echo ("Bad SQL query: " . $q); 
+					echo ($this->Error);
 				}	
 				return $this->result; 
 			}
@@ -44,8 +45,8 @@
 			public function next_record() { 
 				$this->data = mysqli_fetch_array ($this->result); 
 				$this->Row++;
-				$this->Errno = mysqli_errno(); 
-				$this->Error = mysqli_error(); 
+				$this->Errno = mysqli_errno($this->mysql_con); 
+				$this->Error = mysqli_error($this->mysql_con); 
 				$stat = is_array ($this->data); // returnam inregistrarea gasita 
 				if (!$stat) { // nu mai exista o alta inregistrare 
 					mysqli_free_result ($this->result);
