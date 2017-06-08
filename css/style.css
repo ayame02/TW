@@ -453,3 +453,10 @@ display: inline-block;
   width: 700px;
   height: 480px;
 }
+
+#favorites_map { 
+   position:relative; 
+  margin:auto;
+  width:680px;
+  height: 400px;
+}
