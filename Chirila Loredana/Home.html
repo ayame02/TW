@@ -40,18 +40,15 @@
 			<p> Please log in or sign up below to use our features.</p>
 			<form id ="login_form" class="form_settings" action = "login.php" method = "POST">
 				<p>Username:</p>
-				<input type="text" name="user" action = "NaturalHome.html" method = "POST"><br>
+				<input type="text" name="id" action = "NaturalHome.html" method = "POST"><br>
 				<?php
 					session_start();
-					session_id('home');
 					
-					if (isset($_POST["user"])){
-						$value_to_pass = $_POST["user"];
-						$_SESSION["user"] = $value_to_pass;
+					if (isset($_POST["id"])){
+						$value_to_pass = $_POST["id"];
+						$_SESSION["id"] = $value_to_pass;
 					}
 				?>
-				<p>Password:</p>
-				<input type="password" name="pass">
 				<p></p>
 				<input class = "button" type ="submit" value = "Sign In" onclick = "resetEntry()">
 			</form>
