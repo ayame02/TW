@@ -8,12 +8,11 @@
 		<h2>
 		<?php
 			session_start();
-			session_id('home');
 			include ('databaseConn.php');
 			$_SESSION['user'] = $_POST['user'];
 			$db = new Database();
-			if (isset($_POST["user"]) and isset($_POST["pass"])){
-				if ($db->users_check($_POST["user"], $_POST["pass"]) === 1){
+			if (isset($_POST["id"])){
+				if ($db->users_check($_POST["id"]) === 1){
 					echo ("Login success...Redirecting.");
 				}
 				else {
