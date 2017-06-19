@@ -55,12 +55,22 @@
 				return $stat; 
 			}
 			
-			public function users_check($id){
-				$sql = "select id from users where id = $id";
+			public function users_check($id, $username){
+				$sql = "select id, username from users where id = $id and username = $username";
 				$result = mysqli_query($this->mysql_con, $sql);
 				$user_data = mysqli_fetch_assoc ($result);
 				echo $result;
-				if ($user_data["id"] == $id)
+				if ($user_data["id"] == $id and $user_data["username"] == $username)
+					return 1;
+				return 0;
+			}
+			
+			public function username_check($username){
+				$sql = "select username from users where username = $username";
+				$result = mysqli_query($this->mysql_con, $sql);
+				$user_data = mysqli_fetch_assoc ($result);
+				echo $result;
+				if ($user_data["username"] == $username)
 					return 1;
 				return 0;
 			}
