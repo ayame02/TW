@@ -37,23 +37,40 @@
 		<div class="sidebar">
           <div class="sidebar_item">
             <h1>Account</h1>
-			<p> Please log in or sign up below to use our features.</p>
-			<form id ="login_form" class="form_settings" action = "login.php" method = "POST">
-				<p>Username:</p>
-				<input type="text" name="id" action = "NaturalHome.html" method = "POST"><br>
-				<?php
-					session_start();
-					
-					if (isset($_POST["id"])){
-						$value_to_pass = $_POST["id"];
-						$_SESSION["id"] = $value_to_pass;
-					}
+			<p> Please log in or sign up below to use our features. Scan the QR-Code below to get a code on your phone which you will introduce 
+				in the box. </p>
+			<?php
+				$PNG_TEMP_DIR = dirname(__FILE__).DIRECTORY_SEPARATOR.'temp'.DIRECTORY_SEPARATOR;
+				//html PNG location prefix
+				$PNG_WEB_DIR = 'temp/';
+
+				include "qrlib.php";    
+				if (!file_exists($PNG_TEMP_DIR))
+					mkdir($PNG_TEMP_DIR); //drepturi pentru creearea imaginii
+				
+				$filename = $PNG_TEMP_DIR.'loginInfo.png';
+				$errorCorrectionLevel = 'L';
+				$matrixPointSize = 4;
+				$QRid = mt_rand(100000, 999999);
+				QRcode::png($QRid, $filename, $errorCorrectionLevel, $matrixPointSize, 2);
+				//display generated file
+				echo '<img src="'.$PNG_WEB_DIR.basename($filename).'" />';  
 				?>
-				<p></p>
-				<input class = "button" type ="submit" value = "Sign In" onclick = "resetEntry()">
-			</form>
+			<br>
+			<form id = "login_form" class = "form_settings" action = "login.php" method = "POST"><input type="text" name="user_id" >
+				<?php
+				if (isset($_POST["user_id"])){
+						$value_to_pass = $_POST["user_id"];
+						$_SESSION["user_id"] = $value_to_pass;
+				}
+    
+
+				?>
+			<br><br>
+			<input class = "button" type ="submit" value = "Login" onclick = "resetEntry()">
+			<p>Please note down your code somewhere, in case you forget it to avoid complications.</p>
 			<p> Don't have an account?</p>
-			<p>Sign up <a href="SignUp.html">here!</a></p>
+			<p>Not a problem! Just introduce the code given above and you will be automatically added into the database.</p>
           </div><!--close sidebar_item--> 
         </div><!--close sidebar-->     		
 		
