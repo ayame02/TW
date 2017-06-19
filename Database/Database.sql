@@ -1,12 +1,11 @@
 CREATE TABLE users(
-	user_id INT(4) NOT NULL PRIMARY KEY
+	user_id INT(4) NOT NULL PRIMARY KEY,
+	username VARCHAR(256)
 );
 
 /
-
 CREATE TABLE friends(
-	user_id INT(4) PRIMARY KEY,
-	id INT(4),
+	friend_id INT(4) PRIMARY KEY,
 	name VARCHAR(256),
 	age INT(4),
 	date_of_birth DATE,
@@ -19,11 +18,13 @@ CREATE TABLE friends(
 /
 
 CREATE TABLE favorites(
-	user_id INT(4) NOT NULL PRIMARY KEY,
-	id INT(4) NOT NULL,
-	type VARCHAR(100),
+	user_id INT(4),
+	id INT(4) PRIMARY KEY,
+	type VARCHAR(30),
 	name VARCHAR(256),
-	location VARCHAR(500)
+	address VARCHAR(500),
+	lat FLOAT(10,6) NOT NULL,
+	lng FLOAt(10,6) NOT NULL
 );
 
 /
