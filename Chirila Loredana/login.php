@@ -12,14 +12,15 @@
 			$_SESSION['user_id'] = $_POST['user_id'];
 			$db = new Database();
 			$value = $_POST['user_id'];
-			if (isset($_POST['user_id'])){
-				if ($db->users_check($value) === 1){
+			$user = $_POST['username'];
+			if (isset($_POST['user_id']) and isset($_POST['username'])){
+				if ($db->users_check($value, $user) === 1){
 					echo ("Login success...Redirecting.");
 					header ('Refresh: 2; URL=NaturalHome.html');
 				}
 				else {
-					if( $value > 100000 || $value < 999999) {
-						$new_user = "insert into users(user_id) values($value)";
+					if( $value > 100000 or $value < 999999 and $db->username_check($user) === 0) {
+						$new_user = "insert into users(user_id, username) values($value, '$user')";
 						$result = $db->query($new_user);
 						if (!$result) { 
 							echo ("Cannot complete action. Please try again later."); 
