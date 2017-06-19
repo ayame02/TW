@@ -59,6 +59,7 @@
 				$sql = "select id from users where id = $id";
 				$result = mysqli_query($this->mysql_con, $sql);
 				$user_data = mysqli_fetch_assoc ($result);
+				echo $result;
 				if ($user_data["id"] == $id)
 					return 1;
 				return 0;
